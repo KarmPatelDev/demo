@@ -1,3 +1,1145 @@
-*{
-  background-color: "white"
-}
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder
+$ git clone https://github.com/KarmPatelDev/ProjectRepo2.git
+Cloning into 'ProjectRepo2'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder
+$ cd ProjectRepo2/
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git branch
+* main
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git branch feature
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git branch develop
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git branch release
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git branch
+  develop
+  feature
+* main
+  release
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git switch feature
+Switched to branch 'feature'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (feature)
+$ touch feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (feature)
+$ echo "Hello World" > feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (feature)
+$ git add feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (feature)
+$ git commit -m "Added feature.txt"
+[feature 0d95892] Added feature.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (feature)
+$ git switch develop
+Switched to branch 'develop'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ touch feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ echo "Hello There" > feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git add feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git commit -m "Added To Develop Branch"
+[develop d177b7a] Added To Develop Branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git merge feature
+Auto-merging feature.txt
+CONFLICT (add/add): Merge conflict in feature.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop|MERGING)
+$ code .
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop|MERGING)
+$ git add feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop|MERGING)
+$ git commit -m "Conflict Resolve"
+[develop 2ea3d31] Conflict Resolve
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git merge feature
+Already up to date.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git branch fix-bug
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ echo "Hello THere" >> feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git add feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git commit -m "Edited from bugfix"
+[develop b06e90b] Edited from bugfix
+ 1 file changed, 1 insertion(+)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git remote -v
+origin  https://github.com/KarmPatelDev/ProjectRepo2.git (fetch)
+origin  https://github.com/KarmPatelDev/ProjectRepo2.git (push)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git push
+fatal: The current branch develop has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin develop
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git push origin
+fatal: The current branch develop has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin develop
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git switch master
+fatal: invalid reference: master
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git push origin main
+Everything up-to-date
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git push origin feature
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 294 bytes | 294.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'feature' on GitHub by visiting:
+remote:      https://github.com/KarmPatelDev/ProjectRepo2/pull/new/feature
+remote:
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+ * [new branch]      feature -> feature
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git push origin develop
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 884 bytes | 442.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'develop' on GitHub by visiting:
+remote:      https://github.com/KarmPatelDev/ProjectRepo2/pull/new/develop
+remote:
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+ * [new branch]      develop -> develop
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git push origin release
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'release' on GitHub by visiting:
+remote:      https://github.com/KarmPatelDev/ProjectRepo2/pull/new/release
+remote:
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+ * [new branch]      release -> release
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git push origin fix-bug
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'fix-bug' on GitHub by visiting:
+remote:      https://github.com/KarmPatelDev/ProjectRepo2/pull/new/fix-bug
+remote:
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+ * [new branch]      fix-bug -> fix-bug
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git switch develop
+Switched to branch 'develop'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ ls
+README.md  feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ echo "HELLO THERE I AM DEVELOP" > feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git add feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git commit -m "Edited in develop"
+[develop c637487] Edited in develop
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git switch fix-bug
+Switched to branch 'fix-bug'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (fix-bug)
+$ ls
+README.md  feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (fix-bug)
+$ echo "HELLO THERE I AM FIXBUG" > feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (fix-bug)
+$ git add feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (fix-bug)
+$ git commit -m "Edited To FIXBUG"
+[fix-bug fa3f80e] Edited To FIXBUG
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (fix-bug)
+$ git push origin fix-bug
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 312 bytes | 312.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+   2ea3d31..fa3f80e  fix-bug -> fix-bug
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (fix-bug)
+$ git switch develop
+Switched to branch 'develop'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git merge fix-bug
+Auto-merging feature.txt
+CONFLICT (content): Merge conflict in feature.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop|MERGING)
+$ git add feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop|MERGING)
+$ git commit -m "Conflict Resolve"
+[develop f9c87c1] Conflict Resolve
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git push origin develop
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 626 bytes | 313.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+   b06e90b..f9c87c1  develop -> develop
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ ls
+README.md
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ touch feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ echo "HELLO THERE I AM MAIN" > feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git add feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git commit -m "Added to main"
+[main 3855611] Added to main
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 301 bytes | 301.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+   36368ed..3855611  main -> main
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git pull origin main
+From https://github.com/KarmPatelDev/ProjectRepo2
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git switch develop
+Switched to branch 'develop'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git merge main
+Auto-merging feature.txt
+CONFLICT (add/add): Merge conflict in feature.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop|MERGING)
+$ git add feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop|MERGING)
+$ git commit -m "Added conflict resolved"
+[develop 69da1c2] Added conflict resolved
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git push origin develop
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 356 bytes | 356.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+   f9c87c1..69da1c2  develop -> develop
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git merge fix-bug
+Already up to date.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git merge feature
+Already up to date.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git push origin --delete feature
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+ - [deleted]         feature
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git push origin --delete fix-bug
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+ - [deleted]         fix-bug
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git branch
+* develop
+  feature
+  fix-bug
+  main
+  release
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git branch -d feature
+Deleted branch feature (was 0d95892).
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git branch -d fix-bug
+Deleted branch fix-bug (was fa3f80e).
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ ls
+README.md  feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git status
+On branch develop
+nothing to commit, working tree clean
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git branch
+* develop
+  main
+  release
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git fetch origin
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 892 bytes | 33.00 KiB/s, done.
+From https://github.com/KarmPatelDev/ProjectRepo2
+   3855611..68bc780  main       -> origin/main
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git status
+On branch main
+Your branch is behind 'origin/main' by 9 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ ls
+README.md  feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ touch feature2.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git log
+commit 38556116f7803cff896d483f1e9cf83d2942201b (HEAD -> main)
+Author: Karm <contact.karmpatel@gmail.com>
+Date:   Mon Feb 3 13:05:04 2025 +0530
+
+    Added to main
+
+commit 36368eda48f1882b8a4d1dab11269597bdf0d10b (origin/release, release)
+Author: Karm Patel <105373850+KarmPatelDev@users.noreply.github.com>
+Date:   Mon Feb 3 12:51:09 2025 +0530
+
+    Initial commit
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git add feature2.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git commit -m "feature2 is added"
+[main 2546893] feature2 is added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 feature2.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git branch
+  develop
+* main
+  release
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git switch develop
+Switched to branch 'develop'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ ls
+README.md  feature.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git switch -c feature
+Switched to a new branch 'feature'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (feature)
+$ touch feature2.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (feature)
+$ echo "Feature2" > feature2.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (feature)
+$ git switch develop
+Switched to branch 'develop'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git switch main
+error: The following untracked working tree files would be overwritten by checko
+ut:
+        feature2.txt
+Please move or remove them before you switch branches.
+Aborting
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git branch
+* develop
+  feature
+  main
+  release
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git switch main
+error: The following untracked working tree files would be overwritten by checko
+ut:
+        feature2.txt
+Please move or remove them before you switch branches.
+Aborting
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git add .
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git commit -m "feature2 add"
+[develop cc861f8] feature2 add
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature2.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (develop)
+$ git switch main
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 1 and 9 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git status
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 9 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+nothing to commit, working tree clean
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git pull origin main
+From https://github.com/KarmPatelDev/ProjectRepo2
+ * branch            main       -> FETCH_HEAD
+Merge made by the 'ort' strategy.
+ feature.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ ls
+README.md  feature.txt  feature2.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git log
+commit a6dc2c562301416c90e00b7c93845cfc321e097a (HEAD -> main)
+Merge: 2546893 68bc780
+Author: Karm <contact.karmpatel@gmail.com>
+Date:   Mon Feb 3 14:18:05 2025 +0530
+
+    Merge branch 'main' of https://github.com/KarmPatelDev/ProjectRepo2
+
+commit 2546893d92d0e16937c91868a29659b1657b8464
+Author: Karm <contact.karmpatel@gmail.com>
+Date:   Mon Feb 3 14:14:24 2025 +0530
+
+    feature2 is added
+
+commit 68bc7802d8a1a88fd0ed1e1fe9f15118b78a26a0 (origin/main, origin/HEAD)
+Merge: 3855611 69da1c2
+Author: Karm Patel <105373850+KarmPatelDev@users.noreply.github.com>
+Date:   Mon Feb 3 13:09:54 2025 +0530
+
+    Merge pull request #1 from KarmPatelDev/develop
+
+    Develop
+
+commit 69da1c29ae66e9c08272f57f5b193ce00c32b013 (origin/develop, feature)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ touch feature3.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ echo "Karm" > feature3.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git add feature3.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git commit -m "Feature3 Added"
+[main da1dec4] Feature3 Added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature3.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git switch -c develop
+fatal: a branch named 'develop' already exists
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git switch -c testing
+Switched to a new branch 'testing'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing)
+$ echo "Hello THEre" > feature3.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing)
+$ git add feature3.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing)
+$ git commit -m "Added Feature 3"
+[testing 34cef07] Added Feature 3
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing)
+$ git fetch origin main
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 999 bytes | 8.00 KiB/s, done.
+From https://github.com/KarmPatelDev/ProjectRepo2
+ * branch            main       -> FETCH_HEAD
+   68bc780..342844d  main       -> origin/main
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing)
+$ git switch main
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 3 and 1 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ ls
+README.md  feature.txt  feature2.txt  feature3.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git switch testing
+Switched to branch 'testing'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing)
+$ git rebase origin/main
+Auto-merging feature3.txt
+CONFLICT (add/add): Merge conflict in feature3.txt
+error: could not apply da1dec4... Feature3 Added
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --
+abort".
+hint: Disable this message with "git config advice.mergeConflict false"
+Could not apply da1dec4... Feature3 Added
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing|REBASE 2/3)
+$ git add feature3.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing|REBASE 2/3)
+$ git commit -m "feature3.txt"
+[detached HEAD 6fc6e0b] feature3.txt
+ 1 file changed, 1 insertion(+)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing|REBASE 2/3)
+$ git rebase origin/main
+fatal: It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+        git rebase (--continue | --abort | --skip)
+If that is not the case, please
+        rm -fr ".git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing|REBASE 2/3)
+$ git status
+interactive rebase in progress; onto 342844d
+Last commands done (2 commands done):
+   pick 2546893 feature2 is added
+   pick da1dec4 Feature3 Added
+Next command to do (1 remaining command):
+   pick 34cef07 Added Feature 3
+  (use "git rebase --edit-todo" to view and edit)
+You are currently editing a commit while rebasing branch 'testing' on '342844d'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+nothing to commit, working tree clean
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing|REBASE 2/3)
+$ git push origin testing
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (11/11), 1.05 KiB | 358.00 KiB/s, done.
+Total 11 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+remote:
+remote: Create a pull request for 'testing' on GitHub by visiting:
+remote:      https://github.com/KarmPatelDev/ProjectRepo2/pull/new/testing
+remote:
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+ * [new branch]      testing -> testing
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing|REBASE 2/3)
+$ git rebase --continue
+Auto-merging feature3.txt
+CONFLICT (content): Merge conflict in feature3.txt
+error: could not apply 34cef07... Added Feature 3
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --
+abort".
+hint: Disable this message with "git config advice.mergeConflict false"
+Could not apply 34cef07... Added Feature 3
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing|REBASE 3/3)
+$ git status
+interactive rebase in progress; onto 342844d
+Last commands done (3 commands done):
+   pick da1dec4 Feature3 Added
+   pick 34cef07 Added Feature 3
+  (see more in file .git/rebase-merge/done)
+No commands remaining.
+You are currently rebasing branch 'testing' on '342844d'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   feature3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing|REBASE 3/3)
+$ git rebase --abort
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing)
+$ ls
+README.md  feature.txt  feature2.txt  feature3.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing)
+$ touch feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing)
+$ echo "Added Feature4" > feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing)
+$ git add feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing)
+$ git commit -m "Added Featue4"
+[testing b062922] Added Featue4
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (testing)
+$ git switch main
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 3 and 1 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ ls
+README.md  feature.txt  feature2.txt  feature3.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git switch -c test
+Switched to a new branch 'test'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ touch feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ echo "Added Feature4" > feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git add feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git commit -m "Feature4 Added"
+[test b117430] Feature4 Added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git swich main
+git: 'swich' is not a git command. See 'git --help'.
+
+The most similar command is
+        switch
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git switch main
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 3 and 1 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ ls
+README.md  feature.txt  feature2.txt  feature3.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ touch feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ echo "Hello There" > feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git add feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git commit -m "Feature4 Added"
+[main 815d9d2] Feature4 Added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git push origin main
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/KarmPatelDev/ProjectRepo2
+.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git pull origin main
+From https://github.com/KarmPatelDev/ProjectRepo2
+ * branch            main       -> FETCH_HEAD
+Auto-merging feature3.txt
+CONFLICT (add/add): Merge conflict in feature3.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main|MERGING)
+$ git add .
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main|MERGING)
+$ git commit -m "add"
+[main fa8234f] add
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git push origin main
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 598 bytes | 299.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+   342844d..fa8234f  main -> main
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git switch feature4.txt
+fatal: invalid reference: feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git switch test
+Switched to branch 'test'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ ls
+README.md  feature.txt  feature2.txt  feature3.txt  feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git push origin test
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 289 bytes | 289.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'test' on GitHub by visiting:
+remote:      https://github.com/KarmPatelDev/ProjectRepo2/pull/new/test
+remote:
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+ * [new branch]      test -> test
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git rebase origin/main
+Auto-merging feature4.txt
+CONFLICT (add/add): Merge conflict in feature4.txt
+error: could not apply b117430... Feature4 Added
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --
+abort".
+hint: Disable this message with "git config advice.mergeConflict false"
+Could not apply b117430... Feature4 Added
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test|REBASE 1/1)
+$ git status
+interactive rebase in progress; onto fa8234f
+Last command done (1 command done):
+   pick b117430 Feature4 Added
+No commands remaining.
+You are currently rebasing branch 'test' on 'fa8234f'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both added:      feature4.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test|REBASE 1/1)
+$ git status
+interactive rebase in progress; onto fa8234f
+Last command done (1 command done):
+   pick b117430 Feature4 Added
+No commands remaining.
+You are currently rebasing branch 'test' on 'fa8234f'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both added:      feature4.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test|REBASE 1/1)
+$ git status
+interactive rebase in progress; onto fa8234f
+Last command done (1 command done):
+   pick b117430 Feature4 Added
+No commands remaining.
+You are currently rebasing branch 'test' on 'fa8234f'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both added:      feature4.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test|REBASE 1/1)
+$ git add .
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test|REBASE 1/1)
+$ git rebase --continue
+[detached HEAD 042f9d8] Feature4 Conflict is Resolved
+ 1 file changed, 1 insertion(+)
+Successfully rebased and updated refs/heads/test.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git log
+commit 042f9d87077b552d3318119972f8c21e6adf6527 (HEAD -> test)
+Author: Karm <contact.karmpatel@gmail.com>
+Date:   Mon Feb 3 14:43:50 2025 +0530
+
+    Feature4 Conflict is Resolved
+
+commit fa8234f6ad29b0e7c7c97618af6a8937cf4099ff (origin/main, origin/HEAD, main)
+Merge: 815d9d2 342844d
+Author: Karm <contact.karmpatel@gmail.com>
+Date:   Mon Feb 3 14:47:34 2025 +0530
+
+    add
+
+commit 815d9d285d506287b006630d9b7f7fbc48adbc6e
+Author: Karm <contact.karmpatel@gmail.com>
+Date:   Mon Feb 3 14:45:05 2025 +0530
+
+    Feature4 Added
+
+commit 342844df52a52e54d414eeed6e4acf5a2fb124ee
+Author: Karm Patel <105373850+KarmPatelDev@users.noreply.github.com>
+Date:   Mon Feb 3 14:25:44 2025 +0530
+
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git push --force
+fatal: The current branch test has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin test
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git push --force origin test
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 300 bytes | 300.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+ + b117430...042f9d8 test -> test (forced update)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ ls
+README.md  feature.txt  feature2.txt  feature3.txt  feature4.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ touch feature5.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ echo "HELLO THERE" > feature5.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git add feature5.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git commit -m "Added Feature 5"
+[main be99068] Added Feature 5
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature5.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git switch test
+Switched to branch 'test'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ touch feature5.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ echo "HELLO WORLD" > feature5.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git add feature5.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git commit -m "Edited Feature5.txt"
+[test 3144978] Edited Feature5.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature5.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git merge main
+Auto-merging feature5.txt
+CONFLICT (add/add): Merge conflict in feature5.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test|MERGING)
+$ git add feature5.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test|MERGING)
+$ git commit -m "conflict resolved"
+[test 38986ec] conflict resolved
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git push origin test
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 803 bytes | 401.00 KiB/s, done.
+Total 9 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+   042f9d8..38986ec  test -> test
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ ls
+README.md  feature.txt  feature2.txt  feature3.txt  feature4.txt  feature5.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ touch feature6.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ echo "THERE ARE MANY REQUIREMENTE ARE THERE" > feature6.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git add .
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git commit -m "Added Feature66"
+[test c07a46b] Added Feature66
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature6.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git switch main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ ls
+README.md  feature.txt  feature2.txt  feature3.txt  feature4.txt  feature5.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ touch feature6.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ echo "HELLO THERE" > feature6.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git add feature6.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git commit -m "Added Feature6"
+[main 0c4bdac] Added Feature6
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature6.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 268 bytes | 268.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+   fa8234f..0c4bdac  main -> main
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (main)
+$ git switch test
+Switched to branch 'test'
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git pull origin main
+From https://github.com/KarmPatelDev/ProjectRepo2
+ * branch            main       -> FETCH_HEAD
+Auto-merging feature6.txt
+CONFLICT (add/add): Merge conflict in feature6.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test|MERGING)
+$ git add feature6.txt
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test|MERGING)
+$ git commit -m "Feature 6 Added"
+[test e27b51d] Feature 6 Added
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$ git push origin test
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 579 bytes | 579.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/KarmPatelDev/ProjectRepo2.git
+   38986ec..e27b51d  test -> test
+
+Dell@DESKTOP-Q4IO8GR MINGW64 /f/Folder/ProjectRepo2 (test)
+$
