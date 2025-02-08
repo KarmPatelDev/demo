@@ -1,20 +1,47 @@
-<html>
-    <head>
-        <title>Karm</title>
-    </head>
-    <body>
-        <h1>Karm PatelKarm</h1>
-        <h2> Karm Patel</h2>
+import time
+import random
+import queue
 
-        <h2> Karm Patel</h2>
+from threading import Thread
 
-        <h2> Karm Patel</h2>
+counter = 0
+job_queue = queue.Queue()
+counter_queue = queue.Queue()
 
-        <h2> Karm Patel</h2>
+def increment_manager():
+    global counter
+    while True:
+        increment = counter_queue.get()
+        time.sleep(random.random())
+        old_counter = counter
+        time.sleep(random.random())
+        counter = old_counter + increment
+        time.sleep(random.random())
+        job_queue.put((f"New Counter Value is {counter}"), ("----------"))
+        time.sleep(random.random())
+        counter_queue.task_done()
 
-        <h2> Karm Patel</h2>
+Thread(target=increment_manager, daemon=True).start()
 
-        <h2> Karm Patel</h2>
+def printer_manager():
+    while True:
+        for line in job_queue.get():
+            print(line)
+            time.sleep(random.random())
+        job_queue.task_done()
 
-    </body>
-</html>
+Thread(target=increment_manager, daemon=True).start()
+
+def increment_counter():
+    counter_queue.put(1)
+
+worker_threads = [Thread(target = increment_counter) for thread in range(10)]
+
+for thread in worker_threads:
+    thread.start()
+
+for thread in worker_threads:
+    thread.join()
+
+counter_queue.join()
+job_queue.join()
